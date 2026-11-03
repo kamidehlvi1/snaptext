@@ -1,0 +1,88 @@
+Snaptext — Third-Party Notices
+==============================
+
+Snaptext is marketed under its own name, but its OCR engine and runtime are built
+on the open-source components below. These notices are provided to satisfy the
+components' licence terms and MUST ship with the product.
+
+--------------------------------------------------------------------------------
+1. Snaptext OCR engine  (based on "Indra OCR" by Datalab)
+   Source:  https://github.com/datalab-to/indra
+   Code licence:    Apache License 2.0
+   Model weights:   modified OpenRAIL-M (use restrictions apply)
+
+   Apache 2.0 requires that this attribution and the project's NOTICE be retained
+   in redistributions. The OpenRAIL-M weights licence adds use-based restrictions;
+   review it before commercial distribution:
+   https://huggingface.co/datalab-to/indra-ocr
+
+   Portions Copyright (c) Datalab. Licensed under the Apache License, Version 2.0.
+   A copy of the Apache 2.0 licence: https://www.apache.org/licenses/LICENSE-2.0
+
+--------------------------------------------------------------------------------
+2. ONNX Runtime
+   https://github.com/microsoft/onnxruntime   — MIT License
+
+3. OpenCV (opencv-python-headless)
+   https://github.com/opencv/opencv-python     — Apache License 2.0 / MIT
+
+4. pypdfium2 (PDFium)
+   https://github.com/pypdfium2-team/pypdfium2 — Apache 2.0 / BSD-3-Clause (PDFium)
+
+5. NumPy          — BSD-3-Clause      https://numpy.org
+6. Pillow         — HPND/MIT-style    https://python-pillow.org
+7. cryptography   — Apache 2.0 / BSD  https://github.com/pyca/cryptography
+8. Hugging Face Hub — Apache 2.0      https://github.com/huggingface/huggingface_hub
+9. CPython and its standard library  — PSF License  https://www.python.org
+
+--------------------------------------------------------------------------------
+10. TrOCR (Handwriting Pack)  — model "microsoft/trocr-base-handwritten"
+    https://huggingface.co/microsoft/trocr-base-handwritten
+    https://github.com/microsoft/unilm/tree/master/trocr — MIT License
+    Shipped converted to ONNX: encoder weights stored as float16, text decoder
+    quantised to int8.
+
+    MIT License
+
+    Copyright (c) Microsoft Corporation.
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    SOFTWARE.
+
+--------------------------------------------------------------------------------
+11. Medicine names (SnapText Rx) — openFDA NDC directory, U.S. Food and Drug Administration
+    https://open.fda.gov/data/ndc/ — public domain (CC0 1.0 Universal). Derived name list
+    built by packaging/make_drug_list.py. Not endorsed by the FDA. International names and
+    a starter list of local brand names were added by Alkhair Soft.
+
+--------------------------------------------------------------------------------
+12. RxHandBD — Handwritten Prescription Word Image Dataset (SnapText Rx)
+    Md. Masudul Islam, Bangladesh University of Business and Technology
+    https://doi.org/10.5281/zenodo.18478741 — MIT License
+    SnapText Rx's prescription reader (hw_rx) is TrOCR-base fine-tuned on this dataset's
+    training split. No images from the dataset are shipped.
+
+    Copyright (c) 2026 Md. Masudul Islam
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy of this
+    dataset and associated documentation files, to deal in it without restriction, subject
+    to the condition that the above copyright notice and this permission notice shall be
+    included in all copies or substantial portions. (MIT License; full text as in item 10.)
+
+--------------------------------------------------------------------------------
+Full licence texts are available at the URLs above. Questions: alkhairsoft@live.com

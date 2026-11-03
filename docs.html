@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Snaptext documentation — install, capture, OMR, handwriting, SnapText Rx, licences</title>
+<meta name="description" content="How to install and use Snaptext and SnapText Rx: screen capture, Lens, OMR answer sheets, handwriting, the snaptext command, offline installation and licence activation.">
+<link rel="canonical" href="https://kamidehlvi1.github.io/snaptext/docs.html">
+<meta property="og:title" content="Snaptext documentation">
+<meta property="og:description" content="Install, capture, OMR, handwriting, SnapText Rx and licences, step by step.">
+<meta property="og:image" content="https://kamidehlvi1.github.io/snaptext/assets/snaptext.png">
+<meta name="theme-color" content="#0f1b3d">
+<link rel="icon" href="assets/snaptext.png">
+<link rel="stylesheet" href="assets/site.css?v=1.1.0">
+<script src="assets/site.js?v=1.1.0" defer></script>
+</head>
+<body>
+
+<nav class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="assets/snaptext.png" alt="">Snaptext <span class="muted" style="font-weight:600;font-size:15px">Docs</span></a>
+    <button class="menu" aria-expanded="false" aria-label="Menu">Menu</button>
+    <div class="links">
+      <a href="index.html#products">Products</a>
+      <a href="index.html#pricing">Pricing</a>
+      <a href="index.html#licence">Get a licence</a>
+      <a href="index.html#support">Support us</a>
+      <a class="cta" href="index.html#download">Download</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap docs">
+  <aside class="toc" aria-label="Contents">
+    <div class="grp">Get started</div>
+    <a href="#requirements">System requirements</a>
+    <a href="#install">Install</a>
+    <a href="#offline">Offline installation</a>
+    <a href="#first-scan">Your first scan</a>
+    <div class="grp">Snaptext</div>
+    <a href="#scan">Scan files</a>
+    <a href="#snip">Snip a region</a>
+    <a href="#lens">Lens hotkey</a>
+    <a href="#formats">Output and Log</a>
+    <a href="#omr">OMR answer sheets</a>
+    <a href="#handwriting">Handwriting Pack</a>
+    <a href="#cli">Command line</a>
+    <div class="grp">SnapText Rx</div>
+    <a href="#rx">Overview and safety</a>
+    <a href="#rx-read">Reading a prescription</a>
+    <a href="#rx-status">What each status means</a>
+    <a href="#rx-formulary">My formulary</a>
+    <a href="#rx-accuracy">Accuracy</a>
+    <div class="grp">Licences</div>
+    <a href="#trial">Trial and free tier</a>
+    <a href="#activate">Get and activate a licence</a>
+    <a href="#site">Several PCs</a>
+    <a href="#moving">New PC or Windows</a>
+    <div class="grp">More</div>
+    <a href="#privacy">Privacy and security</a>
+    <a href="#troubleshooting">Troubleshooting</a>
+    <a href="#downloads">Guides and notices</a>
+  </aside>
+
+  <main class="doc">
+    <div class="eyebrow">Documentation · version 1.1</div>
+    <h1>Snaptext and SnapText Rx</h1>
+    <p>Everything you need to install, use and activate Snaptext, the Handwriting Pack and SnapText Rx. The <a href="#downloads">printable user guides</a> cover the same steps.</p>
+
+    <!-- ======================= GET STARTED ======================= -->
+    <h2 id="requirements">System requirements</h2>
+    <table>
+      <tr><th>Item</th><th>Needed</th></tr>
+      <tr><td>Windows</td><td>Windows 10 or 11, 64-bit</td></tr>
+      <tr><td>Browser</td><td>Microsoft Edge (built into Windows) or Google Chrome. It only draws the app window and never goes online.</td></tr>
+      <tr><td>Rights</td><td>Administrator rights to install</td></tr>
+      <tr><td>Disk</td><td>Snaptext about 350 MB · Handwriting Pack about 450 MB · SnapText Rx about 1.3 GB</td></tr>
+      <tr><td>Graphics card</td><td>Not needed. Everything runs on the CPU.</td></tr>
+      <tr><td>Internet</td><td>Not needed after download</td></tr>
+    </table>
+
+    <h2 id="install">Install</h2>
+    <ol>
+      <li>Download <a data-dl="Snaptext-Setup.exe" href="#">Snaptext-Setup.exe</a> and run it.</li>
+      <li>If Windows shows <i>"Windows protected your PC"</i>, click <b>More info → Run anyway</b>. The installers aren't code-signed yet. You can check the file against the SHA-256 hash on the <a data-gh="releases" href="#">releases page</a>.</li>
+      <li>Click <b>Install</b>, then launch <b>Snaptext</b> from the Start menu. It opens in its own window.</li>
+      <li>Optional: run <a data-dl="Snaptext-Handwriting-Pack.exe" href="#">Snaptext-Handwriting-Pack.exe</a> to add handwriting. Use the pack from the same release as Snaptext.</li>
+    </ol>
+    <p>SnapText Rx installs the same way from <a data-dl="SnapText-Rx-Setup.exe" href="#">SnapText-Rx-Setup.exe</a>. You'll accept the intended-use terms during install. It installs next to Snaptext without affecting it.</p>
+
+    <h2 id="offline">Offline installation (air-gapped PCs)</h2>
+    <p>Everything is inside the installers, including the OCR engine, the models and the Visual C++ runtime.</p>
+    <ol>
+      <li>On a PC with internet, download the installers and <code>SHA256SUMS.txt</code> from the <a data-gh="releases" href="#">releases page</a>.</li>
+      <li>Copy them to a USB drive or network share, then to the offline PC.</li>
+      <li>Check each file on the offline PC. The result must match the hash in <code>SHA256SUMS.txt</code>:
+        <pre><code>certutil -hashfile "Snaptext-Setup.exe" SHA256</code></pre></li>
+      <li>Install as above. To activate offline, see <a href="#activate">Get and activate a licence</a>.</li>
+    </ol>
+
+    <h2 id="first-scan">Your first scan</h2>
+    <ol>
+      <li>Open Snaptext. You're on the <b>Scan</b> screen.</li>
+      <li>Drag a PDF or image onto the window, or press <kbd>Ctrl</kbd>+<kbd>V</kbd> to paste a screenshot.</li>
+      <li>The text appears on the right. Click <b>Copy</b> or <b>Download</b>.</li>
+    </ol>
+
+    <!-- ======================= SNAPTEXT ======================= -->
+    <h2 id="scan">Scan files</h2>
+    <p>Snaptext reads PDFs and images (PNG, JPG and other common formats). Drop several files at once, or click <b>Browse</b>. Each page is shown with the lines it found, so you can check what was read.</p>
+
+    <h2 id="snip">Snip a region</h2>
+    <ol>
+      <li>Click <b>Snip a region</b> on the Scan screen. Snaptext tucks itself away and counts down.</li>
+      <li>Bring up the window you want, then draw a box around the text.</li>
+      <li>The text comes back into Snaptext and is copied to the clipboard.</li>
+    </ol>
+
+    <h2 id="lens">Lens hotkey</h2>
+    <p>Lens works from any app, without opening Snaptext first. It only needs to be running.</p>
+    <ol>
+      <li>Press <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>L</kbd>. If another app already uses it, Snaptext picks another shortcut and shows it in the app.</li>
+      <li>Drag a box over the text. It's read straight away. Drag the box to move it, drag its edges to resize it, or nudge it with the arrow keys. It reads again each time.</li>
+      <li>Optional: click individual lines to pick only those, or press <kbd>Ctrl</kbd>+<kbd>A</kbd> to pick all.</li>
+      <li>Press <kbd>Ctrl</kbd>+<kbd>C</kbd> or double-click inside the box to copy the text. Press <kbd>Enter</kbd> to open it in Snaptext instead, or <kbd>Esc</kbd> to cancel.</li>
+    </ol>
+
+    <h2 id="formats">Output formats and the Log</h2>
+    <table>
+      <tr><th>Format</th><th>Best for</th></tr>
+      <tr><td>Text</td><td>Pasting into emails and documents</td></tr>
+      <tr><td>Markdown</td><td>Keeping tables and headings, for reports and spreadsheets</td></tr>
+      <tr><td>JSON</td><td>Developers: every line with its position and confidence</td></tr>
+    </table>
+    <p>Every result is also kept on the <b>Log</b> screen with its confidence, so you can find it again later.</p>
+
+    <h2 id="omr">OMR answer sheets</h2>
+    <p>OMR (optical mark recognition) reads filled bubble sheets, such as exam answers, surveys or attendance.</p>
+    <h3>Make a sheet</h3>
+    <ol>
+      <li>Open the <b>OMR</b> screen.</li>
+      <li>Set the title, number of questions, options per question (2–9) and roll-number digits.</li>
+      <li>Click to create the sheet and print the PDF. A code along its edge tells Snaptext the layout, so any sheet you made can be read later.</li>
+    </ol>
+    <h3>Read and mark sheets</h3>
+    <ol>
+      <li>Scan the filled sheets, then drop the images or PDF on the OMR screen. Several sheets at once is fine.</li>
+      <li>Enter the answer key, e.g. <code>ABCDA BCDAB …</code> or <code>1-A, 2-C, 3-B</code>, with <code>-</code> to skip a question. Or fill in one sheet with the correct answers, read it and use it as the key. Negative marking is optional.</li>
+      <li>Export every sheet's roll number, answers and score as CSV.</li>
+    </ol>
+
+    <h2 id="handwriting">Handwriting Pack</h2>
+    <p>The free pack adds a <b>Handwriting</b> option on the Scan screen. Snaptext finds each line, the handwriting reader reads it, and each line gets its own confidence.</p>
+    <ul>
+      <li>It's trained on English handwriting. Neat handwriting reads best.</li>
+      <li>It reads one line at a time, so long pages take longer than printed text.</li>
+      <li>Always check important text against the original.</li>
+    </ul>
+
+    <h2 id="cli">Command line</h2>
+    <p>The installer adds the <code>snaptext</code> command to your PATH. The trial, the daily limit and your licence apply here too.</p>
+<pre><code>snaptext region          # draw a box on screen, OCR it, copy the text
+snaptext window          # OCR the active window
+snaptext screen          # OCR the monitor under the mouse
+snaptext clipboard       # OCR an image already on the clipboard
+snaptext file a.pdf b.png --out results\   # OCR files to Markdown
+snaptext watch           # hotkeys: Ctrl+Alt+O region, +W window, +S screen, +Q quit
+snaptext ui              # open the Snaptext window</code></pre>
+    <p>Add <code>--append report.md</code> to build a report from several captures, or <code>--history</code> to keep every capture.</p>
+
+    <!-- ======================= RX ======================= -->
+    <h2 id="rx">SnapText Rx: overview and safety</h2>
+    <p>SnapText Rx reads a photo, scan or screen snip of a prescription, including handwriting, and turns each medicine line into a card. Each card shows the medicine, strength, form, dose, frequency, duration and instructions. Everything runs on your PC, so prescriptions and patient details never leave it.</p>
+    <p class="notice"><b>Intended use.</b> SnapText Rx is a transcription aid. It is not a medical device and not a clinical decision tool. It doesn't check doses, interactions, allergies or whether a prescription is appropriate. A pharmacist or trained person must check every line against the original prescription.</p>
+
+    <h2 id="rx-read">Reading a prescription</h2>
+    <ol>
+      <li>Drop a photo or scan on the left panel, paste a screenshot, or snip it from the screen.</li>
+      <li>Each medicine line is read by two handwriting readers, taking about two seconds per handwritten line.</li>
+      <li>On the right, each medicine has a card with the <b>crop of the handwriting</b> next to what was read. Check it against the crop.</li>
+      <li>Click <b>✓ Confirm</b> on each card. Mark lines that aren't medicines as <b>Not a medicine</b>.</li>
+      <li>Enter your name under <b>Checked by</b>. <b>Copy as text</b>, <b>CSV</b> and <b>JSON</b> unlock only then.</li>
+    </ol>
+    <p>Changing a confirmed card un-confirms it, so nothing you haven't checked is exported. Every export records the checker's name, the date and time, and each line as it was read.</p>
+
+    <h2 id="rx-status">What each status means</h2>
+    <table>
+      <tr><th>Status</th><th>Meaning</th><th>What to do</th></tr>
+      <tr><td><b style="color:#12a150">In drug list</b></td><td>The word read is exactly a known medicine, and both readers agree.</td><td>Compare with the handwriting, then confirm.</td></tr>
+      <tr><td><b style="color:#b4690e">Suggested — check</b></td><td>The word read is close to one known name, which is filled in. The word as read is shown above it.</td><td>Check carefully, and change it if it's wrong.</td></tr>
+      <tr><td><b style="color:#d92d20">Look-alike — choose</b></td><td>Two or more medicines are about equally close (e.g. Hydroxyzine / Hydralazine), or the readers disagree. Nothing is filled in.</td><td>Pick the one on the prescription. It's usually the first button.</td></tr>
+      <tr><td><b style="color:#d92d20">Unsure — pick or type it</b></td><td>No match is close enough to fill in. Possible names are shown as buttons only.</td><td>Type the medicine. The box suggests names as you type.</td></tr>
+    </table>
+
+    <h2 id="rx-formulary">My formulary</h2>
+    <p>The built-in list has about 4,800 medicine names. Adding the brands you stock makes more lines come back as <b>In drug list</b>.</p>
+    <ol>
+      <li>Click <b>My formulary</b> on the left.</li>
+      <li>Add your brand names, one per line, e.g. <code>Panadol Extra</code>.</li>
+      <li>Click <b>Save</b>. They're used from the next prescription onwards.</li>
+    </ol>
+    <p>Tips: photograph the prescription flat, in good light, filling the frame. Read one prescription per image. English and Latin-script medicine names are read; Urdu text isn't.</p>
+
+    <h2 id="rx-accuracy">Accuracy</h2>
+    <p>We measured on two public datasets of real handwritten medicine words from Bangladeshi prescriptions. None of these images were used for training. Each image was read exactly as a snip would be, with the dataset's medicine names entered as the formulary.</p>
+    <table>
+      <tr><th>Test set</th><th>Words</th><th>Right medicine first</th><th>Right medicine offered</th><th>Shown confidently but wrong</th></tr>
+      <tr><td>RxHandBD test split</td><td>1,110</td><td>62.8%</td><td>77.7%</td><td>1.1%</td></tr>
+      <tr><td>Doctor's Handwritten Prescription BD (other hospitals)</td><td>779</td><td>82.1%</td><td>87.4%</td><td>1.4%</td></tr>
+    </table>
+    <p>About 70% of rows come back as <i>Look-alike — choose</i>, because many local brands look alike. The right name is usually the first choice, so it takes one click. Real doctors' handwriting varies, so measure on your own prescriptions before relying on these numbers.</p>
+
+    <!-- ======================= LICENCES ======================= -->
+    <h2 id="trial">Trial and free tier</h2>
+    <table>
+      <tr><th>When</th><th>What you get</th></tr>
+      <tr><td>Days 1–30</td><td>Every feature, unlimited scans</td></tr>
+      <tr><td>After 30 days</td><td>Free tier: 3 scans per day, forever. A scan is one document or capture; in SnapText Rx, one prescription.</td></tr>
+      <tr><td>With a licence</td><td>Unlimited, forever, on that PC</td></tr>
+    </table>
+    <p>The licence badge at the top of the app shows your current state. A Snaptext licence unlocks Snaptext and the Handwriting Pack. SnapText Rx has its own licence.</p>
+
+    <h2 id="activate">Get and activate a licence</h2>
+    <ol>
+      <li><b>Find your Machine ID.</b> Click the licence badge (<i>Trial</i> or <i>Free</i>). Copy the ID under <b>Your Machine ID</b>, e.g. <code>ABCD-1234-EF56-7890</code>.</li>
+      <li><b>Request the licence.</b> Use the <a href="index.html#licence">licence request form</a>. It prepares an email with your Machine ID(s) for you to send. For an offline PC, copy the ID by hand or USB and send it from any computer.</li>
+      <li><b>Pay.</b> We reply with the amount and payment details.</li>
+      <li><b>Receive the licence.</b> After payment we email a <code>.qslic</code> file for each PC.</li>
+      <li><b>Activate.</b> Open the <code>.qslic</code> file in Notepad and copy everything, including the BEGIN and END lines. Paste it into <b>License key</b> under the licence badge and click <b>Activate</b>. The badge changes to <b>Licensed</b>.</li>
+    </ol>
+    <p><b>IT administrators:</b> to activate for every user of a PC, copy the <code>.qslic</code> file into <code>C:\ProgramData\Snaptext\</code> (or <code>C:\ProgramData\SnapText Rx\</code>) and restart the app.</p>
+
+    <h2 id="site">Several PCs</h2>
+    <p>Each licence is signed for one PC. Put every Machine ID in the request form, one per line, and you'll receive one file per PC. For a school, hospital or company, choose <b>Site licence</b> in the form and we'll send a quote.</p>
+
+    <h2 id="moving">New PC or Windows reinstall</h2>
+    <p>Reinstalling or updating Snaptext keeps the same Machine ID, so your licence keeps working. If asked, paste it again. A new PC or a fresh Windows install gives a new Machine ID. <a data-mail="Snaptext licence transfer" href="#">Email us</a> the old and new IDs.</p>
+
+    <!-- ======================= MORE ======================= -->
+    <h2 id="privacy">Privacy and security</h2>
+    <ul>
+      <li><b>Offline:</b> no network connections, no cloud, no telemetry, no account.</li>
+      <li><b>Signed licences:</b> licences are signed with Ed25519 and checked on your PC, so they can't be forged or edited.</li>
+      <li><b>Tamper protection:</b> the app's code is compiled to native code and sealed. A changed file stops the app from running, and a changed handwriting model is refused.</li>
+      <li><b>Local data:</b> the trial state and licences are stored in <code>%LOCALAPPDATA%\Snaptext</code> (or <code>SnapText Rx</code>).</li>
+    </ul>
+
+    <h2 id="troubleshooting">Troubleshooting</h2>
+    <table>
+      <tr><th>Problem</th><th>Fix</th></tr>
+      <tr><td>"Windows protected your PC"</td><td>Click <b>More info → Run anyway</b>. The installers aren't code-signed yet.</td></tr>
+      <tr><td>"This license is for Machine ID …, not this computer"</td><td>The licence was made for another PC, or the ID was mistyped. Send the Machine ID again.</td></tr>
+      <tr><td>"This license is for SnapText Rx, not Snaptext" (or the reverse)</td><td>Ask for a licence for the product you installed.</td></tr>
+      <tr><td>"This license expired on …"</td><td>Ask for a renewal.</td></tr>
+      <tr><td>"The handwriting model can't be used … Please reinstall"</td><td>A model file is damaged or from another release. Reinstall the Handwriting Pack (or SnapText Rx) from the same release.</td></tr>
+      <tr><td>The Lens hotkey does nothing</td><td>Make sure Snaptext is running. Another app may own the shortcut; the shortcut in use is shown in Snaptext.</td></tr>
+      <tr><td>Handwriting option is greyed out</td><td>Install the Handwriting Pack.</td></tr>
+      <tr><td>"Free tier — 0 of 3 scans left today"</td><td>The daily limit resets tomorrow, or <a href="index.html#licence">get a licence</a>.</td></tr>
+    </table>
+    <p>Still stuck? <a data-gh="issues" href="#">Report an issue on GitHub</a> or <a data-mail="Snaptext help" href="#">email us</a>.</p>
+
+    <h2 id="downloads">Guides and notices</h2>
+    <ul>
+      <li><a href="downloads/Snaptext-User-Guide.pdf">Snaptext User Guide (PDF)</a></li>
+      <li><a href="downloads/SnapText-Rx-User-Guide.pdf">SnapText Rx User Guide (PDF)</a></li>
+      <li><a href="downloads/SnapText-Rx-Intended-Use-and-Safety.txt">SnapText Rx intended use and safety</a></li>
+      <li><a href="downloads/THIRD-PARTY-NOTICES.txt">Third-party notices</a></li>
+    </ul>
+  </main>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="legal" style="border:0;margin:0;padding:0">
+      <span>© <span class="yr"></span> Kamran Yousaf Dehlvi, Alkhair Soft. <a data-mail="Snaptext" href="#" style="display:inline"></a></span>
+      <span><a href="index.html" style="display:inline">Home</a> · <a href="index.html#licence" style="display:inline">Get a licence</a> · <a data-gh="profile" href="#" style="display:inline">GitHub</a></span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

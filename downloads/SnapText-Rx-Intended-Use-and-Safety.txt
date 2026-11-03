@@ -1,0 +1,36 @@
+SnapText Rx - Intended use and safety
+
+Please read this before installing.
+
+WHAT SNAPTEXT RX IS
+SnapText Rx is a TRANSCRIPTION AID. It reads a photo or scan of a prescription, suggests
+medicine names from a drug list, and helps a trained person type up the prescription faster.
+
+WHAT IT IS NOT
+- It is not a medical device and does not make clinical decisions.
+- It does not check doses, interactions, allergies or whether a prescription is appropriate.
+- It does not replace a pharmacist, doctor or any other qualified person.
+
+WHY A PERSON MUST CHECK EVERY LINE
+Handwriting is often misread. Many medicine names look alike (for example Hydroxyzine and
+Hydralazine, Celebrex and Celexa). SnapText Rx therefore:
+- never replaces what it read without showing you,
+- marks names it is unsure about and makes you choose,
+- will not copy or export anything until every medicine has been confirmed by a person
+  and that person's name is entered under "Checked by".
+
+YOUR RESPONSIBILITY
+By installing SnapText Rx you agree that every medicine, strength, frequency, duration and
+instruction will be checked against the original prescription by a qualified person before it
+is used for dispensing or any other purpose, and that you will follow the rules that apply to
+your practice where you work.
+
+PRIVACY
+SnapText Rx runs entirely on this computer. Prescriptions, patient details and results are
+never sent anywhere.
+
+The software is provided "as is", without warranty of any kind. To the fullest extent permitted
+by law, Alkhair Soft is not liable for any harm arising from use of the software, including any
+error in a transcription that was not caught by the person checking it.
+
+SnapText Rx - (c) 2026 Kamran Yousaf Dehlvi, Alkhair Soft - alkhairsoft@live.com
