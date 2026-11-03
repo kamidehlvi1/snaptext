@@ -218,4 +218,10 @@ function chrome() {
   }
 }
 
-document.addEventListener("DOMContentLoaded", () => { wire(); donate(); licenceForm(); chrome(); });
+/* hero loop: still poster for people who ask for reduced motion */
+function heroVideo() {
+  const v = $(".hero-video");
+  if (v && matchMedia("(prefers-reduced-motion: reduce)").matches) { v.removeAttribute("autoplay"); v.pause(); }
+}
+
+document.addEventListener("DOMContentLoaded", () => { wire(); donate(); licenceForm(); chrome(); heroVideo(); });

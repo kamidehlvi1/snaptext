@@ -11,12 +11,12 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Snaptext — Private, offline OCR for Windows">
 <meta property="og:description" content="Capture anything on your screen and get editable text in a second. 100% on your PC. Free to try.">
-<meta property="og:image" content="https://kamidehlvi1.github.io/snaptext/assets/snaptext.png">
+<meta property="og:image" content="https://kamidehlvi1.github.io/snaptext/assets/hero-lens.jpg">
 <meta property="og:url" content="https://kamidehlvi1.github.io/snaptext/">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0f1b3d">
 <link rel="icon" href="assets/snaptext.png">
-<link rel="stylesheet" href="assets/site.css?v=1.1.0">
+<link rel="stylesheet" href="assets/site.css?v=1.2.0">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Snaptext",
  "operatingSystem":"Windows 10, Windows 11","applicationCategory":"BusinessApplication",
@@ -26,7 +26,7 @@
  "author":{"@type":"Person","name":"Kamran Yousaf Dehlvi","email":"alkhairsoft@live.com"},
  "publisher":{"@type":"Organization","name":"Alkhair Soft"}}
 </script>
-<script src="assets/site.js?v=1.1.0" defer></script>
+<script src="assets/site.js?v=1.2.0" defer></script>
 </head>
 <body>
 
@@ -37,6 +37,7 @@
     <div class="links">
       <a href="#products">Products</a>
       <a href="#features">Features</a>
+      <a href="#demo">Demo</a>
       <a href="#rx">SnapText Rx</a>
       <a href="#pricing">Pricing</a>
       <a href="docs.html">Docs</a>
@@ -66,7 +67,12 @@
     </div>
     <div class="device rv">
       <div class="bar"><i></i><i></i><i></i></div>
-      <img src="assets/demo.gif" alt="Snaptext reading a screen region into text" width="560" height="350">
+      <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/hero-lens.jpg" width="1280" height="720"
+             aria-label="Snaptext Lens: a box drawn over a slide in a video call reads its five lines live, they are picked and copied">
+        <source src="assets/hero-lens.mp4" type="video/mp4">
+        <img src="assets/hero-lens.jpg" alt="Snaptext Lens reading the text of a slide shared in a video call" width="1280" height="720">
+      </video>
+      <div class="device-cap">Real footage: Snaptext Lens reading a slide in a video call</div>
     </div>
   </div>
 </header>
@@ -152,6 +158,33 @@
         <h3>Handwriting <span class="tag new">New</span></h3><p>With the free Handwriting Pack, Snaptext finds the lines and reads handwriting too, with a confidence for every line.</p></div>
       <div class="card rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 17l6-6-6-6M12 19h8"/></svg></div>
         <h3>Command line</h3><p><code>snaptext region</code>, <code>window</code>, <code>file</code>, <code>watch</code>: capture and batch-OCR from scripts. The same licence applies.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== DEMO ============================== -->
+<section id="demo">
+  <div class="wrap">
+    <div class="head rv">
+      <div class="eyebrow">See it in action</div>
+      <h2>Under two minutes, the real app</h2>
+      <p>Lens, file import, tables, screen capture, the Log and OMR marking, filmed in Snaptext itself.</p>
+    </div>
+    <div class="demo-video rv">
+      <video controls preload="none" playsinline poster="assets/demo-poster.jpg" width="1280" height="720">
+        <source src="assets/Snaptext-demo.mp4" type="video/mp4">
+        Your browser can't play this video. <a href="assets/Snaptext-demo.mp4">Download it</a>.
+      </video>
+    </div>
+    <div class="shots">
+      <figure class="rv"><img src="assets/shots/scan.jpg" alt="A scanned report imported into Snaptext: every line outlined in green, 35 lines at 99.3% confidence" loading="lazy" width="1280" height="720">
+        <figcaption><b>Import a scan or PDF.</b> Every line is outlined, with a confidence score.</figcaption></figure>
+      <figure class="rv"><img src="assets/shots/markdown.jpg" alt="The same report as Markdown, with the results table kept as a table" loading="lazy" width="1280" height="720">
+        <figcaption><b>Tables stay tables.</b> Copy as text, Markdown or JSON.</figcaption></figure>
+      <figure class="rv"><img src="assets/shots/omr.jpg" alt="OMR: three answer sheets marked against a key, scores 19, 16 and 13 out of 20" loading="lazy" width="1280" height="720">
+        <figcaption><b>Mark answer sheets.</b> Print bubble sheets, then mark a stack of scans against your key.</figcaption></figure>
+      <figure class="rv"><img src="assets/shots/capture.jpg" alt="The capture panel: Snaptext Lens, Quick snip, Pick a window and Whole screen" loading="lazy" width="1280" height="720">
+        <figcaption><b>Capture from screen.</b> Lens, a quick snip, one window or the whole screen.</figcaption></figure>
     </div>
   </div>
 </section>
