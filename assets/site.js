@@ -4,7 +4,7 @@
 const CONFIG = {
   GITHUB_USER: "kamidehlvi1",          // your GitHub username (profile + downloads)
   REPO: "snaptext",                    // the repository whose Releases hold the installers
-  CONTACT: "alkhairsoft@live.com",     // where licence requests and questions go
+  CONTACT: "alkhairsoft@hotmail.com",     // where licence requests and questions go
   CURRENCY: "USD",
   PRICE_SNAPTEXT: "29",                // one PC, one-time. "" = "Contact us"
   PRICE_RX: "",                        // SnapText Rx, one PC, one-time. "" = "Contact us"
