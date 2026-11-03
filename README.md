@@ -19,7 +19,7 @@
 |---|---|---|
 | [**Snaptext-Setup.exe**](https://github.com/kamidehlvi1/snaptext/releases/latest/download/Snaptext-Setup.exe) | Everyone: screen capture, Lens, PDFs and images, tables, OMR | 146 MB |
 | [**Snaptext-Handwriting-Pack.exe**](https://github.com/kamidehlvi1/snaptext/releases/latest/download/Snaptext-Handwriting-Pack.exe) | Optional free add-on: read handwriting (install after Snaptext) | 370 MB |
-| [**SnapText-Rx-Setup.exe**](https://github.com/kamidehlvi1/snaptext/releases/latest/download/SnapText-Rx-Setup.exe) | Pharmacies: handwritten prescriptions into a checked medicine list | 883 MB |
+| [**SnapText-Rx-Setup.exe**](https://github.com/kamidehlvi1/snaptext/releases/latest/download/SnapText-Rx-Setup.exe) | Pharmacies: handwritten prescriptions into a checked medicine list | 887 MB |
 
 User guides: [Snaptext User Guide (PDF)](downloads/Snaptext-User-Guide.pdf) · [SnapText Rx User Guide (PDF)](downloads/SnapText-Rx-User-Guide.pdf)
 
