@@ -47,7 +47,7 @@ Reads handwritten prescriptions with two handwriting readers that check each oth
 ## Support
 
 Snaptext is built by one independent developer. A ⭐ on this repository, a share, or a [donation](https://kamidehlvi1.github.io/snaptext/#support) all help.
-Questions, bugs and ideas are welcome in [Issues](https://github.com/kamidehlvi1/snaptext/issues) or by email at alkhairsoft@hotmail.com.
+Questions, bugs and ideas are welcome in [Issues](https://github.com/kamidehlvi1/snaptext/issues), by email at alkhairsoft@hotmail.com, or on WhatsApp at [+92 300 5382071](https://wa.me/923005382071).
 
 ---
 

@@ -5,6 +5,8 @@ const CONFIG = {
   GITHUB_USER: "kamidehlvi1",          // your GitHub username (profile + downloads)
   REPO: "snaptext",                    // the repository whose Releases hold the installers
   CONTACT: "alkhairsoft@hotmail.com",     // where licence requests and questions go
+  WHATSAPP: "923005382071",               // the same, on WhatsApp: country code + number, digits only
+  WHATSAPP_LABEL: "+92 300 5382071",
   CURRENCY: "USD",
   PRICE_SNAPTEXT: "29",                // one PC, one-time. "" = "Contact us"
   PRICE_RX: "",                        // SnapText Rx, one PC, one-time. "" = "Contact us"
@@ -20,6 +22,7 @@ const CONFIG = {
 // =======================================================================================
 
 const $ = (s, el = document) => el.querySelector(s);
+const waLink = (text) => `https://wa.me/${CONFIG.WHATSAPP}${text ? "?text=" + encodeURIComponent(text) : ""}`;
 const $$ = (s, el = document) => [...el.querySelectorAll(s)];
 const GH = `https://github.com/${CONFIG.GITHUB_USER}`;
 const REPO_URL = `${GH}/${CONFIG.REPO}`;
@@ -54,6 +57,8 @@ function wire() {
   $$("[data-gh-name]").forEach(el => el.textContent = `@${CONFIG.GITHUB_USER}`);
   $$("[data-mail]").forEach(a => { a.href = `mailto:${CONFIG.CONTACT}${a.dataset.mail ? "?subject=" + encodeURIComponent(a.dataset.mail) : ""}`;
                                    if (!a.textContent.trim()) a.textContent = CONFIG.CONTACT; });
+  $$("[data-wa]").forEach(a => { a.href = waLink(a.dataset.wa); a.target = "_blank"; a.rel = "noopener";
+                                 if (!a.textContent.trim()) a.textContent = `WhatsApp ${CONFIG.WHATSAPP_LABEL}`; });
   $$("[data-price]").forEach(el => {
     const p = PRODUCTS[el.dataset.price].price;
     el.innerHTML = p ? `${money(p)} <small>one-time, per PC</small>` : `Ask us <small>for a price</small>`;
@@ -186,7 +191,11 @@ function licenceForm() {
       a.href = URL.createObjectURL(new Blob([`To: ${CONFIG.CONTACT}\r\nSubject: ${subject}\r\n\r\n${body.replace(/\n/g, "\r\n")}`], { type: "text/plain" }));
       a.download = `${ref}-licence-request.txt`; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 1000);
     };
+    $("#req-wa").href = waLink(`${subject}
+
+${body}`);
     $$(".to-addr").forEach(el => el.textContent = CONFIG.CONTACT);
+    $$(".to-wa").forEach(el => el.textContent = CONFIG.WHATSAPP_LABEL);
     out.classList.add("on");
     out.scrollIntoView({ behavior: "smooth", block: "nearest" });
   });
@@ -220,8 +229,13 @@ function chrome() {
 
 /* hero loop: still poster for people who ask for reduced motion */
 function heroVideo() {
-  const v = $(".hero-video");
-  if (v && matchMedia("(prefers-reduced-motion: reduce)").matches) { v.removeAttribute("autoplay"); v.pause(); }
+  const v = $("#heroVideo"), b = $("#heroSound");
+  if (!v) return;
+  const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (still) { v.removeAttribute("autoplay"); v.pause(); if (b) b.lastChild.textContent = "Play the demo"; }
+  if (b) b.onclick = () => {          // from the start, with sound and the player's controls
+    v.muted = false; v.loop = false; v.controls = true; v.currentTime = 0; v.play(); b.hidden = true;
+  };
 }
 
 document.addEventListener("DOMContentLoaded", () => { wire(); donate(); licenceForm(); chrome(); heroVideo(); });
