@@ -12,6 +12,9 @@ const CONFIG = {
   PRICE_RX: "",                        // SnapText Rx, one PC, one-time. "" = "Contact us"
   BUY_SNAPTEXT: "",                    // optional checkout link (Gumroad, Lemon Squeezy...). "" = request form
   BUY_RX: "",
+  // Website visit statistics, cookie-free. Paste the token from Cloudflare > Web Analytics > Add a site
+  // (the long value after "token": in the snippet it shows). "" = no statistics, nothing is loaded.
+  ANALYTICS_CLOUDFLARE: "",
   DONATE: {                            // leave "" to hide a button
     github: "",                        // e.g. "https://github.com/sponsors/kamidehlvi1" once Sponsors is approved
     coffee: "",                        // e.g. "https://www.buymeacoffee.com/yourname"
@@ -238,4 +241,14 @@ function heroVideo() {
   };
 }
 
-document.addEventListener("DOMContentLoaded", () => { wire(); donate(); licenceForm(); chrome(); heroVideo(); });
+/* cookie-free visit counting, only when a token is set; the footer then says so */
+function stats() {
+  if (!CONFIG.ANALYTICS_CLOUDFLARE) return;
+  const s = document.createElement("script");
+  s.defer = true; s.src = "https://static.cloudflareinsights.com/beacon.min.js";
+  s.setAttribute("data-cf-beacon", JSON.stringify({ token: CONFIG.ANALYTICS_CLOUDFLARE }));
+  document.head.appendChild(s);
+  $$(".site-stats-note").forEach(el => el.hidden = false);
+}
+
+document.addEventListener("DOMContentLoaded", () => { wire(); donate(); licenceForm(); chrome(); heroVideo(); stats(); });
